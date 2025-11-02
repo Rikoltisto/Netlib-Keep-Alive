@@ -15,8 +15,7 @@ fail_msgs = [
 ]
 
 mesaĝaj_partoj = []
-mesaĝaj_partoj.append("🌐 *netlib.re 域名保活报告*")
-mesaĝaj_partoj.append("📦 *Databricks 应用状态报告*");
+mesaĝaj_partoj.append("🌐 netlib.re 域名保活报告")
 
 def ensaluta_konto(playwright, UZANTONOMO, PWD):
     mesaĝaj_partoj.append(f"🧑‍💻 开始登录账号: {UZANTONOMO}")
