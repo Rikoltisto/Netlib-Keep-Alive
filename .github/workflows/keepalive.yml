@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⏱️ Generi hazardan prokraston (maksimume 6 horojn).
+      - name: ⏱️ Generi hazardan prokraston (maksimume 2 horojn).
         run: |
-          delay=$((RANDOM % 21601))  
+          delay=$((RANDOM % 7200))  
           echo "将在 $delay 秒后开始执行任务"
           sleep $delay
     
