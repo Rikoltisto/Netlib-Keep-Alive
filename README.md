@@ -2,12 +2,11 @@
 
 ## 项目简介
 
-本项目用于自动登录 [Netlib.re](https://www.netlib.re/) 网站，实现账号保活。适用于需要每隔一段时间（如 30 天）登录一次的网站场景。支持多账号循环登录、登录失败判定、延迟和网页加载等待，防止被风控。支持 GitHub Actions 自动运行（无头模式），成功登录后停留 5 秒，用于保活或刷新 Cookie。仅用于登录保活，不涉及敏感操作。
+本项目用于自动登录 [Netlib.re](https://www.netlib.re/) 网站，实现账号保活。适用于需要每隔一段时间（如 30 天）登录一次的网站场景。支持登录失败判定、延迟和网页加载等待，防止被风控。支持 GitHub Actions 自动运行（无头模式），成功登录后停留 5 秒，用于保活或刷新 Cookie。仅用于登录保活，不涉及敏感操作。
 
 ## 功能说明
 
-1. **多账号支持**：通过单个环境变量配置多个账号，保证安全。可在 GitHub Actions 中循环登录。
-2. **登录成功判断**：
+1. **登录成功判断**：
 
    * 成功条件：页面出现 `You are the exclusive owner of the following domains.`
    * 失败条件：出现以下提示之一：
@@ -16,13 +15,12 @@
      * `Not connected to server.`
      * `Error with the login: login size should be between 2 and 50 (currently: 1)`
    * 其他情况判定为失败。
-3. **延迟与等待**：
+2. **延迟与等待**：
 
    * 打开网页等待 5 秒
    * 每个操作步骤间隔 2 秒
    * 登录成功后停留 5 秒
-   * 多账号之间间隔 2 秒
-4. **GitHub Actions 自动运行**：
+3. **GitHub Actions 自动运行**：
 
    * 支持定时任务（如每月 1 号和 31 号）
    * 支持手动触发
